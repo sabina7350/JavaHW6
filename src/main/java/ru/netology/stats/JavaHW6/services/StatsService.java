@@ -17,7 +17,6 @@ public class StatsService {
         for (int sale : sales) {
             sum += sale;
         }
-        System.out.println(sum / sales.length);
         return sum / sales.length;
     }
 
@@ -44,11 +43,7 @@ public class StatsService {
     }
 
     public int minMid(int[] sales) {
-        int midSum = 0;
-        for (int i = 0; i < sales.length; i++) {
-            midSum += sales[i];
-        }
-        int lessMid = midSum / sales.length;
+        int lessMid = midSum(sales);
         int count = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < lessMid) {
@@ -60,11 +55,7 @@ public class StatsService {
     }
 
     public int maxMid(int[] sales) {
-        int midSum = 0;
-        for (int i = 0; i < sales.length; i++) {
-            midSum += sales[i];
-        }
-        int moreMid = midSum / sales.length;
+        int moreMid = midSum(sales);
         int count = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > moreMid) {
